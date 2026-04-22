@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://2bharcueogb4"]
+
+[ext_resource type="Texture2D" uid="uid://dvr8lniect2mg" path="res://sprites/icon.svg" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://ci85ph6pnw68b" path="res://scenes/player.gd" id="1_g2els"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vyb7"]
+size = Vector2(130, 128)
+
+[node name="player" type="CharacterBody2D" unique_id=543725700]
+script = ExtResource("1_g2els")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1809087311]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_3vyb7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1271517465]
+scale = Vector2(0.25, 0.25)
+shape = SubResource("RectangleShape2D_3vyb7")
+
+[node name="Timer" type="Timer" parent="." unique_id=1608573146]
+process_callback = 0
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
