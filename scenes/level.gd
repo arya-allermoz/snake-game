@@ -13,13 +13,13 @@ func _process(_delta: float) -> void:
 
 
 func spawn_food() -> void:
-	# TODO: Food is not instanciated (not appearing)
-	print("food ate")
+	# creates new food instance and conencts the signals
 	var food = food_scene.instantiate() as Area2D
 	food.connect("food_consumed", _on_food_consumed)
-	food.position = Vector2i( (randi()%21)*32, ((randi()%12)*32 + 4) )
+	
+	# randomizes it's position while staying on the grid
+	food.position = Vector2i( (randi()%21)*32 - 16, ((randi()%12)*32 - 12) )
+	add_child(food)
 
 func _on_food_consumed() -> void:
-	# TODO: fix signal connection
-	print("food aten")
-	spawn_food()
+	call_deferred("spawn_food")
