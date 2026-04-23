@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://ci85ph6pnw68b" path="res://scenes/player.gd" id="1_g2els"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3vyb7"]
-size = Vector2(130, 128)
+size = Vector2(128, 128)
 
 [node name="player" type="CharacterBody2D" unique_id=543725700]
 script = ExtResource("1_g2els")

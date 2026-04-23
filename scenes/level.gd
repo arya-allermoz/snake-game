@@ -1,5 +1,7 @@
 extends Node2D
 
+signal grow_tail
+
 var food_scene: PackedScene = preload("res://scenes/food.tscn")
 
 # Called when the node enters the scene tree for the first time.
@@ -24,3 +26,4 @@ func spawn_food() -> void:
 # handles calling all other methods when food is consumed
 func _on_food_consumed() -> void:
 	call_deferred("spawn_food")
+	grow_tail.emit()

@@ -13,3 +13,7 @@ texture = ExtResource("1_2q6dc")
 
 [node name="player" parent="." unique_id=543725700 instance=ExtResource("2_w7c3h")]
 position = Vector2(304, 180)
+
+[node name="tail" type="Node2D" parent="." unique_id=576873093]
+
+[connection signal="grow_tail" from="." to="player" method="_grow_tail"]
