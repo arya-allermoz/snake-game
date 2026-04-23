@@ -17,7 +17,7 @@ func spawn_food() -> void:
 	food.connect("food_consumed", _on_food_consumed)
 	
 	# randomizes its position while staying aligned to the grid
-	food.position = Vector2i( (randi()%21)*32 - 16, ((randi()%12)*32 - 12) )
+	food.position = Vector2i( (randi()%20)*32 + 16, ((randi()%11)*32 + 20) )
 	
 	# adds the instance to the scene tree to make it appear
 	add_child(food)
