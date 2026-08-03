@@ -1,3 +1,21 @@
 [gd_scene format=3 uid="uid://b7ipbbt85jft6"]
 
-[node name="food" type="Node2D" unique_id=722250994]
+[ext_resource type="Script" uid="uid://b0qrwkmms4avx" path="res://scenes/food.gd" id="1_af40f"]
+[ext_resource type="Texture2D" uid="uid://dvr8lniect2mg" path="res://sprites/icon.svg" id="1_xven1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_af40f"]
+size = Vector2(130, 128)
+
+[node name="food" type="Area2D" unique_id=1833057543]
+script = ExtResource("1_af40f")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1010509611]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_xven1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=170856157]
+scale = Vector2(0.1, 0.1)
+shape = SubResource("RectangleShape2D_af40f")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
